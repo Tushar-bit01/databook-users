@@ -15,10 +15,15 @@ A simple User Management System built with:
 
 .
 ├── views/             # EJS templates (home, showuser, edit, new, deleteuser, error)
+
 ├── schema.sql         # SQL file to create database and user table
+
 ├── .env               # DB credentials (ignored by git)
+
 ├── index.js           # Main Express app
+
 ├── package.json
+
 └── README.md
 
 ----------------------------------------
