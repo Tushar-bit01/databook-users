@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        edit user
+    </title>
+    <style>
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+    
+        body {
+          font-family: "Poppins", sans-serif;
+          background: linear-gradient(to right, #00c6ff, #0072ff);
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        p{
+            margin-bottom: 20px;
+            font-size: larger;
+        }
+        .form-container {
+          background-color: #fff;
+          padding: 2.5rem 3rem;
+          border-radius: 15px;
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+          width: 90%;
+          max-width: 420px;
+          animation: slideUp 0.5s ease-out;
+          text-align: center;
+        }
+    
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+    
+        .form-container h1 {
+          font-size: 1.5rem;
+          color: #444;
+          margin-bottom: 1.2rem;
+          font-weight: 700;
+          word-wrap: break-word;
+        }
+    
+        .form-container h2 {
+          color: #0072ff;
+          margin-bottom: 1.5rem;
+        }
+    
+        label {
+          display: block;
+          font-weight: 600;
+          margin-bottom: 0.3rem;
+          text-align: left;
+          color: #333;
+        }
+    
+        input {
+          width: 100%;
+          padding: 0.8rem;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          margin-bottom: 1.2rem;
+          font-size: 1rem;
+        }
+    
+        button {
+          width: 100%;
+          padding: 0.8rem;
+          border: none;
+          border-radius: 8px;
+          background-color: #0072ff;
+          color: white;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.3s ease;
+        }
+    
+        button:hover {
+          background-color: #0056c0;
+        }
+    
+        .back-link {
+          display: block;
+          text-align: center;
+          margin-top: 1rem;
+          color: #0072ff;
+          text-decoration: none;
+          font-size: 0.9rem;
+        }
+    
+        .back-link:hover {
+          text-decoration: underline;
+        }
+      </style>
+</head>
+<body>
+    <p>USER ID:<%= user.id %></p>
+    <form action="/user/<%=user.id%>?_method=PATCH" method="post">
+        <input type="text" placeholder="Change username" name="username">
+        <input type="password" placeholder="Enter your password" name="password">
+        <button>Save Changes</button>
+    </form>
+</body>
+</html> 
