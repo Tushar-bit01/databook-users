@@ -1,108 +1,141 @@
-# 📘 User Management App (CRUD with MySQL + Express + EJS)
+cat <<EOF > README.md
+# 📘 Databook Users
 
-A simple User Management System built with:
+A full-stack **User Management CRUD application** built with **Node.js**, **Express**, **MySQL**, and **EJS**.  
+It allows users to be added, viewed, edited, and deleted through a clean, server-rendered UI.
 
-- Node.js (Express.js)
-- MySQL2
-- EJS templating engine
-- Faker.js for dummy data
-- Method Override for PATCH/DELETE
-- dotenv for environment security
+---
 
-----------------------------------------
+## 🔧 Features
 
-📁 Project Structure:
+- ➕ Add new users with email & password
+- 🔍 View all users in a styled table
+- ✏️ Edit username after verifying password
+- ❌ Delete user after email & password verification
+- 📊 User count displayed on homepage
+- 🧠 Fully dynamic with server-side rendering (EJS)
 
-.
-├── views/             # EJS templates (home, showuser, edit, new, deleteuser, error)
+---
 
-├── schema.sql         # SQL file to create database and user table
+## 📂 Project Structure
 
-├── .env               # DB credentials (ignored by git)
+\`\`\`
+databook-users/
 
-├── index.js           # Main Express app
+├── views/                 # EJS templates
+
+│   ├── home.ejs
+
+│   ├── showuser.ejs
+
+│   ├── new.ejs
+
+│   ├── edit.ejs
+
+│   ├── deleteuser.ejs
+
+│   └── error.ejs
+
+├── schema.sql             # MySQL table schema
+
+├── .env                   # Environment variables (DB creds)
+
+├── .gitignore
 
 ├── package.json
 
-└── README.md
+├── README.md
 
-----------------------------------------
+└── index.js               # Main Express app
 
-🚀 Features:
+\`\`\`
 
-- View all users
-- Add new user
-- Edit username (with password check)
-- Delete user (with email + password confirmation)
-- Home page with total user count
+---
 
-----------------------------------------
+## 🧪 Tech Stack
 
-⚙️ Setup Instructions:
+- **Backend**: Node.js, Express
+- **Database**: MySQL
+- **Templating**: EJS
+- **Styling**: Inline CSS (custom UI)
+- **Utilities**: Faker.js, UUID, dotenv, method-override
 
-1️⃣ Clone the repo:
+---
 
-git clone https://github.com/your-username/user-management-app.git
-cd user-management-app
+## 🚀 Getting Started
 
-2️⃣ Install dependencies:
+### 1️⃣ Clone the repo:
 
+\`\`\`
+git clone https://github.com/Tushar-bit01/databook-users.git
+
+cd databook-users
+\`\`\`
+
+### 2️⃣ Install dependencies:
+
+\`\`\`
 npm install
+\`\`\`
 
-3️⃣ Create `.env` file:
+### 3️⃣ Set up .env file:
+Create a \`.env\` file in root with your DB credentials:
+
+\`\`\`
 
 DB_HOST=localhost
+
 DB_USER=root
+
 DB_PASSWORD=your_mysql_password
+
 DB_NAME=tushar_app
 
-4️⃣ Create MySQL database & table:
+\`\`\`
+
+### 4️⃣ Set up MySQL database:
+
+- Open MySQL
+- Run the schema:
+- 
+\`\`\`
 
 CREATE DATABASE tushar_app;
 
 USE tushar_app;
 
+
 CREATE TABLE user (
-  id VARCHAR(255) PRIMARY KEY,
-  username VARCHAR(255) NOT NULL,
-  email VARCHAR(255) UNIQUE NOT NULL,
-  password VARCHAR(255) NOT NULL
+
+    id VARCHAR(255) PRIMARY KEY,
+    username VARCHAR(100),
+    email VARCHAR(100),
+    password VARCHAR(100)
+    
 );
+\`\`\`
 
-5️⃣ Start the server:
+OR just import \`schema.sql\`.
 
+---
+
+### 5️⃣ Start the server:
+\`\`\`bash
 node index.js
+\`\`\`
 
-App runs at: http://localhost:3000
+App will run at:  
+👉 \`http://localhost:3000\`
 
-----------------------------------------
+---
 
-🛠 Tech Stack:
+## 🤝 Author
 
-- Express.js
-- MySQL2
-- EJS
-- Faker.js
-- UUID
-- Method-Override
-- dotenv
+Made with 💙 by [Tushar Yadav](https://github.com/Tushar-bit01)
 
-----------------------------------------
+---
 
-✨ Future Improvements:
+## 📜 License
 
-- Form validations
-- Hash passwords using bcrypt
-- REST API version
-- Add pagination for user listing
-
-----------------------------------------
-
-👤 Author:
-
-Tushar Yadav  
-Learning Backend & Full Stack Web Dev
-
-----------------------------------------
-
-⭐ Star this repo if it helped you!
+This project is for learning/demo purposes. No license applied.
+EOF
